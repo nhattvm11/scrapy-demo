@@ -11,11 +11,14 @@ class HotArticlesSpiderSpider(scrapy.Spider):
         # self.logger.info('================================')
         # # self.logger.info(response.css('.jsx-1114360312 + .main ol').getall())
         # self.logger.info('================================')
-        items = response.css('.jsx-1114360312 + .main ol').getall()
+        items = response.css('.jsx-1114360312 + .main ol')
         for item in items:
-            self.logger.info('================================')
-            self.logger.info(item.css('ol::text'))
-            self.logger.info('================================')
+            # self.logger.info('================================')
+            # self.logger.info(item.css('ol').get())
+            ol = item.css('ol')
+            for li in ol:
+                self.logger.info(li)
+            # self.logger.info('================================')
         # filename = 'tinhte.html'
         # with open(filename, 'wb') as f:
         #     f.write(a)
