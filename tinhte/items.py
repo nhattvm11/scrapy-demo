@@ -6,9 +6,15 @@
 # https://doc.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from scrapy import Field
 
-
+class AuthorItem(scrapy.Item):
+    name = Field()
+    phone = Field()
 class TinhteItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    title = Field()
+    img = Field()
+    excerpt = Field()
+    content = Field()
+    author = Field()
+
